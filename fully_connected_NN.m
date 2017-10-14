@@ -7,14 +7,16 @@ NUM_NEURONS = 5;
 LEARNING_RATE = 0.03;
 MOMENTUM_WEIGHT = 0.9;
 EPOCHS = 10;
+% initialize network
 net = initialize_net(NUM_NEURONS, LEARNING_RATE, MOMENTUM_WEIGHT);
+% train the network
 x = rand(1, 1000) * 2 - 1;
 y = 2 * x.^2 + 1;
 [loss_array, net] = train(net, x, y, EPOCHS);
+% test the network
 x_test = rand(1, 1000) * 2 - 1;
 y_pred = predict(net, x_test);
 y_test = 2 * x_test.^2 + 1;
-
 % plot loss vs epoch
 figure;
 plot(loss_array, 'LineWidth', 5);
@@ -23,7 +25,6 @@ title_string = sprintf('Loss vs Epoch, Learning Rate %.2f, Momentum %.2f', ...
 title(title_string);
 fprintf('Learning rate: %.2f, Momentum: %.2f, Minimum loss: %e, Avg loss: %.5f\n', ...
     LEARNING_RATE, MOMENTUM_WEIGHT, min(loss_array), mean(loss_array));
-
 % plot prediction vs truth
 figure;
 scatter(x_test, y_test, 5, 'b');
@@ -33,7 +34,6 @@ title_string = sprintf('Prediction vs Truth, Learning Rate %.2f, Momentum %.2f',
     LEARNING_RATE, MOMENTUM_WEIGHT);
 title(title_string);
 legend('test truth', 'predicted value');
-
 
 function net = initialize_net(NUM_NEURONS, LEARNING_RATE, MOMENTUM_WEIGHT)
     net.learning_rate = LEARNING_RATE;
