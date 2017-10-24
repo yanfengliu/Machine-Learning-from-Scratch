@@ -4,4 +4,5 @@ This repo contains code that applies machine learning techniques from statch. Th
 
 Currently in this repo:
 * MATLAB
-  * [Fully Connected Neural Network](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/fully_connected_NN.m)
+  * [MLPNN (Multilayer Perceptron Neural Network](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/MLPNN.m)
+  * [RBFNN (Radial Basis Function Neural Network](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/RBFNN.m)
