@@ -22,23 +22,13 @@ c2 = 2;
 colors = rand(20, 3);
 
 % Update particles
-% figure;
-% axis([-5 5 -5 5]);
-% mean_z_array = zeros(1, length(c1_array));
-% mean_itr_array = zeros(1, length(c1_array));
-% mean_runtime_array = zeros(1, length(speed_limit_array));
 
-% for c1_idx = 1:length(c1_array)
-%     c1 = c1_array(c1_idx);
-%     c2 = 4-c1;
 x_array = zeros(1, NUM_RUNS);
 y_array = zeros(1, NUM_RUNS);
 z_array = zeros(1, NUM_RUNS);
 itr_array = zeros(1, NUM_RUNS);
-%     runtime_array = zeros(1, NUM_RUNS);
-%
+
 for k = 1:NUM_RUNS
-    %         start_time = clock;
     % Initialize particles
     swarm.x = rand(1, NUM_PARTICLES) * 10 - 5;
     swarm.y = rand(1, NUM_PARTICLES) * 10 - 5;
@@ -80,10 +70,6 @@ for k = 1:NUM_RUNS
             swarm.y(j) = max(-5, swarm.y(j));
             swarm.y(j) = min(5, swarm.y(j));
             
-            %         axis([-5 5 -5 5]);
-            %         scatter(swarm.x(j), swarm.y(j), 25, colors(j, :), 'filled');
-            %         hold on;
-            
             % calculate new z
             swarm.z(j) = get_z_value(swarm.x(j), swarm.y(j));
             
@@ -103,17 +89,12 @@ for k = 1:NUM_RUNS
             swarm.y_gbest = swarm.y(idx);
             swarm.converge = i;
         end
-        %     pause(0.1);
     end
-    %         finish_time = clock;
-    %         time_elapsed = finish_time - start_time;
-    %         time_elapsed = time_elapsed(end);
     
     x_array(k) = swarm.x_gbest;
     y_array(k) = swarm.y_gbest;
     z_array(k) = swarm.z_gbest;
     itr_array(k) = swarm.converge;
-    %         runtime_array(k) = time_elapsed;
 end
 scatter(x_array, y_array);
 
@@ -126,25 +107,6 @@ x_array_2 = x_array(x_array < 0);
 y_array_2 = y_array(x_array < 0);
 mean(x_array_2)
 mean(y_array_2)
-
-
-
-%     fprintf('%.1f & %.1f & %f & %.2f \\\\ \n', ...
-%         c1, c2, mean(z_array), mean(itr_array));
-%     mean_z_array(c1_idx) = mean(z_array);
-%     mean_itr_array(c1_idx) = mean(itr_array);
-%     mean_runtime_array(speed_limit_idx) = mean(runtime_array);
-% end
-
-% figure;
-% plot(c1_array, mean_z_array);
-% title('c1 vs. average z min');
-% figure;
-% plot(c1_array, mean_itr_array);
-% title('c1 vs. average iterations to reach z min');
-% figure;
-% plot(num_particle_array, mean_runtime_array);
-% title('Num of particles vs. average runtime');
 
 % mesh plot
 X = -1:0.01:1;
