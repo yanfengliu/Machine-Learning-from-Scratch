@@ -7,4 +7,4 @@ Currently in this repo:
   * [MLPNN (Multilayer Perceptron Neural Network)](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/MLPNN.m)
   * [RBFNN (Radial Basis Function Neural Network)](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/RBFNN.m)
   * [PSO (Particle Swarm Optimization)](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/PSO.m)
-  * [Training MLPNN using PSO](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/MLPNN_PSO.m)
+  * [MLPNN_PSO (Training MLPNN using PSO)](https://github.com/yanfengliu/Machine-Learning-from-Scratch/blob/master/MLPNN_PSO.m)
